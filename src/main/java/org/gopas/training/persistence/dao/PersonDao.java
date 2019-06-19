@@ -8,9 +8,7 @@ import org.gopas.training.persistence.pojos.PersonWithContactsProjection;
 /**
  * @author Pavel Seda
  */
-public interface PersonDao {
-
-    Person getPersonById(Long id);
+public interface PersonDao extends Dao<Long, Person> {
 
     Person getPersonByIdNamedQuery(Long id);
 

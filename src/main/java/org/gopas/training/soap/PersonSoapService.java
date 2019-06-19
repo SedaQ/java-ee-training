@@ -1,6 +1,7 @@
 package org.gopas.training.soap;
 
 import javax.ejb.EJB;
+import javax.inject.Inject;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -14,9 +15,9 @@ import org.gopas.training.facade.PersonFacade;
 @WebService(serviceName = "PersonSoapService")
 public class PersonSoapService {
 
-    @EJB
     private PersonFacade personFacade;
 
+    @Inject
     public PersonSoapService(PersonFacade personFacade) {
         this.personFacade = personFacade;
     }

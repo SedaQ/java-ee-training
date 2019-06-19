@@ -7,7 +7,7 @@ import java.time.LocalDate;
  * @author Seda
  */
 public class PersonDto {
-    
+
     private Long idPerson;
     private String email;
     private char[] pwd;
@@ -17,8 +17,9 @@ public class PersonDto {
     private LocalDate birthday;
     private Integer age;
 
-    public PersonDto(){}
-    
+    public PersonDto() {
+    }
+
     public PersonDto(Long idPerson, String email, char[] pwd, String nickname, String firstName, String surname, LocalDate birthday, Integer age) {
         this.idPerson = idPerson;
         this.email = email;
@@ -97,6 +98,6 @@ public class PersonDto {
     @Override
     public String toString() {
         return "PersonDto{" + "idPerson=" + idPerson + ", email=" + email + ", pwd=" + pwd + ", nickname=" + nickname + ", firstName=" + firstName + ", surname=" + surname + ", birthday=" + birthday + ", age=" + age + '}';
-    }  
+    }
 
 }
