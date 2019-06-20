@@ -11,14 +11,14 @@ import javax.persistence.PersistenceContext;
  * @param <K>
  * @param <E>
  */
-public abstract class JpaDao<K, E> implements Dao<K, E> {
+public abstract class AbstractJpaDao<K, E> implements Dao<K, E> {
 
     protected Class<E> entityClass;
 
     @PersistenceContext
     protected EntityManager entityManager;
 
-    public JpaDao() {
+    public AbstractJpaDao() {
         ParameterizedType genericSuperclass = (ParameterizedType) getClass().getGenericSuperclass();
         this.entityClass = (Class<E>) genericSuperclass.getActualTypeArguments()[1];
     }

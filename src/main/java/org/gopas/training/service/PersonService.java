@@ -1,7 +1,7 @@
 package org.gopas.training.service;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import org.gopas.training.persistence.dao.PersonDao;
 import org.gopas.training.persistence.model.Person;
 
@@ -12,7 +12,7 @@ import org.gopas.training.persistence.model.Person;
 @Stateless
 public class PersonService {
        
-    @Inject
+    @EJB
     private PersonDao personDao;
 
     public PersonService() {

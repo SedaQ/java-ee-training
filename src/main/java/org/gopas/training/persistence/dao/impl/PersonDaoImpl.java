@@ -3,7 +3,8 @@ package org.gopas.training.persistence.dao.impl;
 import javax.persistence.EntityGraph;
 import javax.persistence.TypedQuery;
 import java.util.List;
-import org.gopas.training.persistence.dao.JpaDao;
+import javax.ejb.Local;
+import org.gopas.training.persistence.dao.AbstractJpaDao;
 import org.gopas.training.persistence.dao.PersonDao;
 import org.gopas.training.persistence.model.Person;
 import org.gopas.training.persistence.pojos.PersonIdEmailSurnameCityProjection;
@@ -12,7 +13,8 @@ import org.gopas.training.persistence.pojos.PersonWithContactsProjection;
 /**
  * @author Pavel Seda
  */
-public class PersonDaoImpl extends JpaDao<Long, Person> implements PersonDao {
+@Local
+public class PersonDaoImpl extends AbstractJpaDao<Long, Person> implements PersonDao {
 
     @Override
     public Person getPersonByIdNamedQuery(Long id) {

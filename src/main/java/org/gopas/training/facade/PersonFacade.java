@@ -2,8 +2,6 @@ package org.gopas.training.facade;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
-import javax.inject.Named;
 import javax.transaction.Transactional;
 import org.gopas.training.api.PersonDto;
 import org.gopas.training.persistence.model.Person;
@@ -17,7 +15,7 @@ import org.gopas.training.service.PersonService;
 @Stateless
 public class PersonFacade {
 
-    @Inject
+    @EJB
     private PersonService personService;
 
     public PersonFacade() {

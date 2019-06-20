@@ -15,9 +15,9 @@ import org.gopas.training.facade.PersonFacade;
 @WebService(serviceName = "PersonSoapService")
 public class PersonSoapService {
 
+    @EJB
     private PersonFacade personFacade;
 
-    @Inject
     public PersonSoapService(PersonFacade personFacade) {
         this.personFacade = personFacade;
     }
