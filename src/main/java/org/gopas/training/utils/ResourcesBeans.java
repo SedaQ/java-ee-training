@@ -20,7 +20,7 @@ import org.modelmapper.ModelMapper;
  * @author SedaQ
  */
 @ApplicationScoped
-public class ProducesBeans {
+public class ResourcesBeans {
 
     /**
      *
