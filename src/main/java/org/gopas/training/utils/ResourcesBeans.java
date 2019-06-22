@@ -1,7 +1,6 @@
 package org.gopas.training.utils;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Alternative;
 import javax.enterprise.inject.Produces;
 import org.modelmapper.ModelMapper;
 
@@ -33,5 +32,5 @@ public class ResourcesBeans {
         modelMapper.getConfiguration().setAmbiguityIgnored(true);
         return modelMapper;
     }
-
+    
 }

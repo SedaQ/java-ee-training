@@ -88,23 +88,27 @@ public class Address implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Address)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Address)) {
+            return false;
+        }
         Address address = (Address) o;
-        return Objects.equals(getCity(), address.getCity()) &&
-                Objects.equals(getStreet(), address.getStreet()) &&
-                Objects.equals(getHouseNumber(), address.getHouseNumber()) &&
-                Objects.equals(getZipCode(), address.getZipCode());
+        return Objects.equals(getCity(), address.getCity())
+                && Objects.equals(getStreet(), address.getStreet())
+                && Objects.equals(getHouseNumber(), address.getHouseNumber())
+                && Objects.equals(getZipCode(), address.getZipCode());
     }
 
     @Override
     public String toString() {
-        return "Address{" +
-                "idAddress=" + idAddress +
-                ", city='" + city + '\'' +
-                ", street='" + street + '\'' +
-                ", houseNumber=" + houseNumber +
-                ", zipCode='" + zipCode + '\'' +
-                '}';
+        return "Address{"
+                + "idAddress=" + idAddress
+                + ", city='" + city + '\''
+                + ", street='" + street + '\''
+                + ", houseNumber=" + houseNumber
+                + ", zipCode='" + zipCode + '\''
+                + '}';
     }
 }

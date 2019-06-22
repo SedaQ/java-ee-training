@@ -5,6 +5,7 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import org.gopas.training.persistence.dao.PersonDao;
 import org.gopas.training.persistence.model.Person;
+import org.gopas.training.utils.interceptors.bindings.Auditable;
 
 /**
  *
@@ -12,22 +13,23 @@ import org.gopas.training.persistence.model.Person;
  */
 @Stateless
 public class PersonServiceSessionBean {
-       
+
     @EJB
     private PersonDao personDao;
 
     public PersonServiceSessionBean() {
     }
-    
-    private PersonServiceSessionBean(PersonDao personDao){
+
+    private PersonServiceSessionBean(PersonDao personDao) {
         this.personDao = personDao;
     }
-    
-    public Person getPersonById(Long id){
+
+    @Auditable
+    public Person getPersonById(Long id) {
         return personDao.findById(id);
     }
-    
-    public List<Person> getAllPersons(){
+
+    public List<Person> getAllPersons() {
         return personDao.findAllPersons();
     }
 }

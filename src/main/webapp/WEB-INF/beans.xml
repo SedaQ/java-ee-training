@@ -3,7 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
        bean-discovery-mode="annotated"
-        >
+>
     <!--bean-discovery-mode="annotated"-->
     <!-- used to manage: interceptors, decorators, alternatives -->
+    
+    <interceptors>
+        <class>org.gopas.training.utils.interceptors.AuditInterceptor</class>
+        <class>org.gopas.training.utils.interceptors.AuthorizationInterceptor</class>
+    </interceptors>
 </beans>
