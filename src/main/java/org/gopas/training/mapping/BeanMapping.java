@@ -2,6 +2,7 @@ package org.gopas.training.mapping;
 
 import java.util.*;
 import javax.enterprise.context.Dependent;
+import javax.inject.Inject;
 import org.modelmapper.ModelMapper;
 
 /**
@@ -10,13 +11,8 @@ import org.modelmapper.ModelMapper;
 @Dependent
 public class BeanMapping {
 
+    @Inject
     private ModelMapper modelMapper;
-
-    public BeanMapping() {
-        this.modelMapper = new ModelMapper();
-
-        modelMapper.getConfiguration().setAmbiguityIgnored(true);
-    }
 
     public <T> List<T> mapTo(Collection<?> objects, Class<T> mapToClass) {
         List<T> mappedCollection = new ArrayList<>();
