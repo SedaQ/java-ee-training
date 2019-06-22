@@ -1,7 +1,5 @@
 package org.gopas.training.persistence.model;
 
-import org.hibernate.annotations.NaturalId;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -31,7 +29,6 @@ public class Person implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_person", updatable = false, nullable = false)
     private Long idPerson;
-    @NaturalId
     @Column(nullable = false, length = 100)
     private String email;
     @Column(nullable = false)

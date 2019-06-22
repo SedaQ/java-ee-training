@@ -1,12 +1,12 @@
 package org.gopas.training.soap;
 
+import java.util.List;
 import javax.ejb.EJB;
-import javax.inject.Inject;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import org.gopas.training.api.PersonDto;
-import org.gopas.training.facade.PersonFacade;
+import org.gopas.training.facade.PersonFacadeSessionBean;
 
 /**
  *
@@ -16,17 +16,22 @@ import org.gopas.training.facade.PersonFacade;
 public class PersonSoapService {
 
     @EJB
-    private PersonFacade personFacade;
+    private PersonFacadeSessionBean personFacade;
 
-    public PersonSoapService(PersonFacade personFacade) {
+    public PersonSoapService() {
+    }
+
+    public PersonSoapService(PersonFacadeSessionBean personFacade) {
         this.personFacade = personFacade;
     }
 
-    /**
-     * This is a sample web service operation
-     */
     @WebMethod(operationName = "getPersonById")
     public PersonDto getPersonById(@WebParam(name = "id") Long id) {
         return personFacade.getPersonById(id);
+    }
+
+    @WebMethod(operationName = "getAllPersons")
+    public List<PersonDto> getAllPersons() {
+        return personFacade.getAllPersons();
     }
 }

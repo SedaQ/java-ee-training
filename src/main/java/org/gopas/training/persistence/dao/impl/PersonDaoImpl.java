@@ -3,7 +3,7 @@ package org.gopas.training.persistence.dao.impl;
 import javax.persistence.EntityGraph;
 import javax.persistence.TypedQuery;
 import java.util.List;
-import javax.ejb.Local;
+import javax.ejb.Stateless;
 import org.gopas.training.persistence.dao.AbstractJpaDao;
 import org.gopas.training.persistence.dao.PersonDao;
 import org.gopas.training.persistence.model.Person;
@@ -13,9 +13,11 @@ import org.gopas.training.persistence.pojos.PersonWithContactsProjection;
 /**
  * @author Pavel Seda
  */
-@Local
+@Stateless
 public class PersonDaoImpl extends AbstractJpaDao<Long, Person> implements PersonDao {
 
+    public PersonDaoImpl(){}
+    
     @Override
     public Person getPersonByIdNamedQuery(Long id) {
         TypedQuery<Person> persons = entityManager.createNamedQuery("Person.findById", Person.class).setParameter("id", id);

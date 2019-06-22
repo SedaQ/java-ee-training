@@ -1,6 +1,7 @@
 package org.gopas.training.persistence.dao;
 
 import java.lang.reflect.ParameterizedType;
+import javax.ejb.Remote;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -11,6 +12,7 @@ import javax.persistence.PersistenceContext;
  * @param <K>
  * @param <E>
  */
+@Remote
 public abstract class AbstractJpaDao<K, E> implements Dao<K, E> {
 
     protected Class<E> entityClass;
