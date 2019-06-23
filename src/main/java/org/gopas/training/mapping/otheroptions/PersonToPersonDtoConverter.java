@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.gopas.training.mapping.otheroptions;
 
 import org.gopas.training.api.PersonDto;
@@ -23,7 +18,6 @@ public class PersonToPersonDtoConverter implements SuperConverter<Person, Person
         personDto.setFirstName(person.getFirstName());
         personDto.setIdPerson(person.getIdPerson());
         personDto.setNickname(person.getNickname());
-        personDto.setPwd(person.getPwd());
         personDto.setSurname(person.getSurname());
         return personDto;
     }

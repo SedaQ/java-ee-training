@@ -5,6 +5,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
+import org.gopas.training.api.MeetingsInPastDto;
 import org.gopas.training.api.PersonDto;
 
 /**
@@ -21,5 +22,9 @@ public interface PersonSoapService {
     @WebMethod(operationName = "getAllPersons")
     @WebResult(name = "persons")
     public List<PersonDto> getAllPersons();
+
+    @WebMethod(operationName = "getAllMeetingsInPast")
+    @WebResult(name = "meetings")
+    public List<MeetingsInPastDto> getAllMeetingsInPast();
 
 }

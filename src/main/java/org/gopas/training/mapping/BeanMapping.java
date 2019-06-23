@@ -16,9 +16,9 @@ public class BeanMapping {
 
     public <T> List<T> mapTo(Collection<?> objects, Class<T> mapToClass) {
         List<T> mappedCollection = new ArrayList<>();
-        for (Object object : objects) {
+        objects.forEach(object -> {
             mappedCollection.add(modelMapper.map(object, mapToClass));
-        }
+        });
         return mappedCollection;
     }
 

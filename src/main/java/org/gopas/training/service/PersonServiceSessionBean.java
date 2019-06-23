@@ -32,4 +32,5 @@ public class PersonServiceSessionBean {
     public List<Person> getAllPersons() {
         return personDao.findAllPersons();
     }
+
 }

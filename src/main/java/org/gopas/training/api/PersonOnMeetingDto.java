@@ -4,9 +4,9 @@ import java.time.LocalDate;
 
 /**
  *
- * @author Seda
+ * @author SedaQ
  */
-public class PersonDto {
+public class PersonOnMeetingDto {
 
     private Long idPerson;
     private String email;
@@ -16,10 +16,10 @@ public class PersonDto {
     private LocalDate birthday;
     private Integer age;
 
-    public PersonDto() {
+    public PersonOnMeetingDto() {
     }
 
-    public PersonDto(Long idPerson, String email, String nickname, String firstName, String surname, LocalDate birthday, Integer age) {
+    public PersonOnMeetingDto(Long idPerson, String email, String nickname, String firstName, String surname, LocalDate birthday, Integer age) {
         this.idPerson = idPerson;
         this.email = email;
         this.nickname = nickname;
@@ -87,7 +87,7 @@ public class PersonDto {
 
     @Override
     public String toString() {
-        return "PersonDto{" + "idPerson=" + idPerson + ", email=" + email + ", nickname=" + nickname + ", firstName=" + firstName + ", surname=" + surname + ", birthday=" + birthday + ", age=" + age + '}';
+        return "PersonOnMeetingDto{" + "idPerson=" + idPerson + ", email=" + email + ", nickname=" + nickname + ", firstName=" + firstName + ", surname=" + surname + ", birthday=" + birthday + ", age=" + age + '}';
     }
 
 }

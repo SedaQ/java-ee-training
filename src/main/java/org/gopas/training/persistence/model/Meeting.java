@@ -29,8 +29,10 @@ public class Meeting implements Serializable {
     private String note;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "person_has_meeting",
-            joinColumns = {@JoinColumn(name = "id_person")},
-            inverseJoinColumns = {@JoinColumn(name = "id_meeting")})
+            joinColumns = {
+                @JoinColumn(name = "id_person")},
+            inverseJoinColumns = {
+                @JoinColumn(name = "id_meeting")})
     private Set<Person> persons = new HashSet<>();
 
     public Meeting() {
@@ -91,12 +93,12 @@ public class Meeting implements Serializable {
 
     @Override
     public String toString() {
-        return "Meeting{" +
-                "idMeeting=" + idMeeting +
-                ", startTime=" + startTime +
-                ", duration=" + duration +
-                ", place='" + place + '\'' +
-                ", note='" + note + '\'' +
-                '}';
+        return "Meeting{"
+                + "idMeeting=" + idMeeting
+                + ", startTime=" + startTime
+                + ", duration=" + duration
+                + ", place='" + place + '\''
+                + ", note='" + note + '\''
+                + '}';
     }
 }
