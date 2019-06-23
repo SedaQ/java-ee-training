@@ -1,0 +1,7 @@
+Download ELK.
+
+Start Elasticsearch (check on 9200 port)
+Start Kibana (check on 5601 port)
+Start Logstash
+    - Copy paste logstash.conf under config directory
+    - Start logstash using the following command: bin/logstash.bat -f config/logstash.conf
