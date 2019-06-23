@@ -11,4 +11,12 @@
         <class>org.gopas.training.utils.interceptors.AuditInterceptor</class>
         <class>org.gopas.training.utils.interceptors.AuthorizationInterceptor</class>
     </interceptors>
+    
+    <!-- if the alternative class is listed here then this class will be injected instead of the previous one without @Alternative tag -->
+    
+    <!--
+    <alternatives>
+        <class>org.gopas.training.persistence.dao.jdbctemplate.PersonDaoJdbcTemplateImpl</class>
+    </alternatives>
+    -->
 </beans>
