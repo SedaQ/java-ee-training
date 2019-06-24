@@ -76,4 +76,9 @@ public class PersonDaoJdbcTemplateImpl implements PersonDao {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public List<Person> getPersonsWithBirthday() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

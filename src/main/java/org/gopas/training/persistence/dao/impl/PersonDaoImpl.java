@@ -16,8 +16,16 @@ import org.gopas.training.persistence.pojos.PersonWithContactsProjection;
 @Stateless
 public class PersonDaoImpl extends AbstractJpaDao<Long, Person> implements PersonDao {
 
-    public PersonDaoImpl(){}
-    
+    public PersonDaoImpl() {
+    }
+
+    @Override
+    public List<Person> getPersonsWithBirthday() {
+        TypedQuery<Person> persons = entityManager.createQuery("SELECT p FROM Person p WHERE DATE_PART('day', p.birthday) = date_part('day', CURRENT_DATE)"
+                + " AND DATE_PART('month', p.birthday) = date_part('month', CURRENT_DATE)", Person.class);
+        return persons.getResultList();
+    }
+
     @Override
     public Person getPersonByIdNamedQuery(Long id) {
         TypedQuery<Person> persons = entityManager.createNamedQuery("Person.findById", Person.class).setParameter("id", id);
@@ -57,9 +65,9 @@ public class PersonDaoImpl extends AbstractJpaDao<Long, Person> implements Perso
 
     @Override
     public List<PersonIdEmailSurnameCityProjection> findAllPersonsEmailSurnameCityProjection() {
-        List<PersonIdEmailSurnameCityProjection> persons =
-                entityManager.createQuery("SELECT new com.sedaq.training.jpa.pojos.PersonIdEmailSurnameCityProjection(p.id, p.email, p.surname, p.address.city) FROM Person p " +
-                        "JOIN p.address")
+        List<PersonIdEmailSurnameCityProjection> persons
+                = entityManager.createQuery("SELECT new com.sedaq.training.jpa.pojos.PersonIdEmailSurnameCityProjection(p.id, p.email, p.surname, p.address.city) FROM Person p "
+                        + "JOIN p.address")
                         .getResultList();
         return persons;
     }
@@ -71,15 +79,16 @@ public class PersonDaoImpl extends AbstractJpaDao<Long, Person> implements Perso
     }
 
     /**
-     * This project does not work.. the Set is not passed to the given constructor
+     * This project does not work.. the Set is not passed to the given
+     * constructor
      *
      * @return
      */
     @Override
     public List<PersonWithContactsProjection> findAllPersonsWithContacts() {
-        return entityManager.createQuery("SELECT new com.sedaq.training.jpa.pojos.PersonWithContactsProjection(p.id, p.email, p.surname, p.address.city, p.contacts) " +
-                "FROM Person p " +
-                "JOIN p.contacts")
+        return entityManager.createQuery("SELECT new com.sedaq.training.jpa.pojos.PersonWithContactsProjection(p.id, p.email, p.surname, p.address.city, p.contacts) "
+                + "FROM Person p "
+                + "JOIN p.contacts")
                 .getResultList();
     }
 }

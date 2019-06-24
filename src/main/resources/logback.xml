@@ -20,11 +20,12 @@
     </appender>
     
     <!-- appending logs to Logstash which sends-->
+    <!--
     <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">        
         <destination>127.0.0.1:4560</destination>        
         <encoder class="net.logstash.logback.encoder.LogstashEncoder" />    
     </appender>
-
+    -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
@@ -34,6 +35,6 @@
     <root level="debug">
         <appender-ref ref="FILE-AUDIT" />
         <appender-ref ref="STDOUT" />
-        <appender-ref ref="LOGSTASH" />
+        <!--<appender-ref ref="LOGSTASH" />-->
     </root>
 </configuration>

@@ -29,4 +29,6 @@ public interface PersonDao extends Dao<Long, Person> {
     List<PersonIdEmailSurnameCityProjection> findAllPersonsEmailSurnameCityProjection();
 
     List<PersonWithContactsProjection> findAllPersonsWithContacts();
+
+    List<Person> getPersonsWithBirthday();
 }
